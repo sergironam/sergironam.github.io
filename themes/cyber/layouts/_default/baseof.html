@@ -3,38 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ site.Title }} · Portfolio{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <title>{{ if .IsHome }}{{ site.Title }} · {{ site.Params.rol }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250,5 93,28 93,72 50,95 7,72 7,28%22 fill=%22%230d1424%22 stroke=%22%2322d3ee%22 stroke-width=%228%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%2322d3ee%22/></svg>">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
-  <header class="site-header">
-    <h1><a href="{{ "/" | relURL }}">🛡️ {{ site.Title }}</a></h1>
-    <p class="subtitle">{{ site.Params.subtitulo }}</p>
-  </header>
+  <header class="topbar">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-mark">◈</span>
+      <span class="brand-name">{{ site.Title }}</span>
+      <span class="brand-sep">//</span>
+      <span class="brand-tag">SOC</span>
+    </a>
 
-  <nav class="site-nav">
-    <button class="nav-toggle" aria-label="Menú" onclick="document.querySelector('.site-nav ul').classList.toggle('open')">☰ Menú</button>
-    <ul>
+    <button class="nav-toggle" aria-label="Menú" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+
+    <nav class="nav">
       {{ $current := . }}
       {{ range site.Menus.main }}
         {{ $active := or (eq $current.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
-        <li><a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
+        <a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a>
       {{ end }}
-    </ul>
-  </nav>
+    </nav>
+
+    <div class="status">
+      <span class="dot dot-ok"></span><span>ONLINE</span>
+      <span class="clock" id="clock">--:--:-- UTC</span>
+    </div>
+  </header>
 
   <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="site-footer">
-    <p>© {{ now.Year }} {{ site.Title }} · Portfolio técnico | {{ site.Params.subtitulo }}</p>
-    <p class="footer-links">
+  <footer class="footer">
+    <span>© {{ now.Year }} {{ site.Title }}</span>
+    <span class="mono muted">// {{ site.Params.rol }}</span>
+    <span>
       <a href="{{ site.Params.github }}" target="_blank" rel="noopener">GitHub</a> ·
       <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
+    </span>
   </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById('clock');
+      function tick() { el.textContent = new Date().toISOString().substr(11, 8) + ' UTC'; }
+      tick(); setInterval(tick, 1000);
+    })();
+  </script>
 </body>
 </html>

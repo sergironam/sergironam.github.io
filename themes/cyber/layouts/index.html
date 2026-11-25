@@ -1,32 +1,73 @@
 {{ define "main" }}
-<section class="hero">
-  <h2>Bienvenido a mi portfolio técnico</h2>
-  {{ .Content }}
-  <hr>
-  <p class="hero-note">📌 Laboratorios reales · Documentados de principio a fin · En constante evolución</p>
+{{ $total := len site.Data.proyectos }}
+{{ $publicados := 0 }}
+{{ range site.Data.proyectos }}{{ with site.GetPage .ruta }}{{ $publicados = add $publicados 1 }}{{ end }}{{ end }}
+{{ $writeups := 0 }}
+{{ with site.GetPage "/writeups" }}{{ $writeups = len .RegularPages }}{{ end }}
+
+<section class="panel hero">
+  <div class="panel-head">
+    <span class="mono">// ANALYST PROFILE</span>
+    <span class="pill pill-ok"><span class="dot dot-ok"></span> DISPONIBLE PARA INCORPORACIÓN</span>
+  </div>
+  <div class="hero-body">
+    <p class="mono prompt"><span class="c-cyan">sergio@soc</span>:<span class="c-purple">~</span>$ whoami</p>
+    <h1>{{ site.Title }}</h1>
+    <p class="hero-rol">{{ site.Params.rol }}</p>
+    <div class="hero-text">{{ .Content }}</div>
+    <div class="actions">
+      <a class="btn" href="{{ "/proyectos/" | relURL }}">▸ Ver proyectos</a>
+      <a class="btn btn-ghost" href="{{ "/cv.pdf" | relURL }}">⤓ Descargar CV</a>
+      <a class="btn btn-ghost" href="{{ "/contacto/" | relURL }}">✉ Contacto</a>
+    </div>
+  </div>
 </section>
 
-<section class="grid">
-  {{ range site.Data.areas }}
-  <article class="card">
-    <h3>{{ .icono }} {{ .titulo }}</h3>
-    <p>{{ .descripcion }}</p>
-    <ul class="project-list">
-      {{ range .proyectos }}
-        {{ with site.GetPage .ruta }}
-          <li><a href="{{ .RelPermalink }}">📄 {{ .Title }}</a></li>
-        {{ else }}
-          <li class="soon">🚧 {{ .titulo }} <span class="badge">Próximamente</span></li>
-        {{ end }}
-      {{ end }}
-    </ul>
-  </article>
-  {{ end }}
+<section class="kpis">
+  <div class="kpi">
+    <span class="kpi-label">Proyectos</span>
+    <span class="kpi-value">{{ $publicados }}<small>/{{ $total }}</small></span>
+    <span class="kpi-foot">publicados</span>
+    <div class="bar"><span style="width: {{ if gt $total 0 }}{{ div (mul $publicados 100) $total }}{{ else }}0{{ end }}%"></span></div>
+  </div>
+  <div class="kpi">
+    <span class="kpi-label">Certificaciones</span>
+    <span class="kpi-value">{{ site.Params.certificaciones }}</span>
+    <span class="kpi-foot">Cisco CyberOps · Ethical Hacker</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-label">Experiencia IT</span>
+    <span class="kpi-value">{{ site.Params.experiencia }}<small> años</small></span>
+    <span class="kpi-foot">soporte · redes · sistemas</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-label">Writeups</span>
+    <span class="kpi-value">{{ $writeups }}</span>
+    <span class="kpi-foot">TryHackMe · CTFs</span>
+  </div>
 </section>
 
-<div class="cta">
-  <a class="btn" href="{{ "/proyectos/" | relURL }}">🔒 Ver todos los proyectos →</a>
-  <a class="btn btn-secondary" href="{{ "/sobre-mi/" | relURL }}">📖 Conoce mi trayectoria</a>
-  <a class="btn btn-secondary" href="{{ "/contacto/" | relURL }}">📬 Contacto</a>
-</div>
+<section class="panel">
+  <div class="panel-head">
+    <span class="mono">// CASOS · PROYECTOS</span>
+    <span class="mono muted">{{ $total }} registros</span>
+  </div>
+  <div class="table">
+    <div class="row row-head mono">
+      <span>ID</span><span>Proyecto</span><span>Categoría</span><span>Estado</span>
+    </div>
+    {{ range $i, $p := site.Data.proyectos }}
+      {{ $page := site.GetPage $p.ruta }}
+      <a class="row{{ if not $page }} row-off{{ end }}" {{ with $page }}href="{{ .RelPermalink }}"{{ end }}>
+        <span class="mono muted">#{{ printf "%03d" (add $i 1) }}</span>
+        <span class="row-title">▸ {{ $p.titulo }}</span>
+        <span><span class="tag">{{ $p.categoria }}</span></span>
+        <span>
+          {{ if $page }}<span class="pill pill-ok"><span class="dot dot-ok"></span> PUBLICADO</span>
+          {{ else }}<span class="pill pill-wip"><span class="dot dot-wip"></span> EN CURSO</span>{{ end }}
+        </span>
+      </a>
+    {{ end }}
+  </div>
+</section>
 {{ end }}

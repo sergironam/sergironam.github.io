@@ -1,5 +1,5 @@
 ---
-title: "🎓 Certificaciones y formación"
+title: "Certificaciones y formación"
 ---
 
 ## Certificaciones

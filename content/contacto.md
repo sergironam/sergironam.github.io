@@ -1,5 +1,5 @@
 ---
-title: "📬 Contacto"
+title: "Contacto"
 ---
 ¿Tienes una oferta, una propuesta o quieres comentar algún proyecto? Escríbeme:
 

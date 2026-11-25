@@ -5,7 +5,6 @@ draft: true
 summary: "Resumen de una o dos líneas del proyecto."
 tags: []
 area: ""
-icono: "📄"
 herramientas: []
 mitre: []
 ---

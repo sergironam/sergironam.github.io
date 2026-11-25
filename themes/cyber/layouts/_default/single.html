@@ -1,28 +1,36 @@
 {{ define "main" }}
+{{ $esCaso := eq .Type "proyectos" "writeups" }}
 <article class="post">
-  {{ if eq .Type "proyectos" "writeups" }}
-  <p class="breadcrumb"><a href="{{ "/" | relURL }}">Inicio</a> › <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a></p>
-  {{ end }}
-  <h2 class="post-title">{{ with .Params.icono }}{{ . }} {{ end }}{{ .Title }}</h2>
+  <header class="page-head">
+    {{ if $esCaso }}
+    <p class="mono muted"><a href="{{ "/" | relURL }}">inicio</a> / <a href="{{ .CurrentSection.RelPermalink }}">{{ lower .CurrentSection.Title }}</a> / {{ .File.ContentBaseName }}</p>
+    {{ else }}
+    <p class="mono muted">// {{ upper .Title }}</p>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="lead">{{ . }}</p>{{ end }}
+  </header>
 
-  {{ if eq .Type "proyectos" "writeups" }}
-  <div class="meta">
-    <span>📅 {{ .Date.Format "02/01/2006" }}</span>
-    <span>⏱️ {{ .ReadingTime }} min</span>
-    {{ with .Params.plataforma }}<span>🎯 {{ . }}</span>{{ end }}
-    {{ with .Params.dificultad }}<span>📊 {{ . }}</span>{{ end }}
+  {{ if $esCaso }}
+  <div class="meta-grid">
+    <div><span class="k">Fecha</span><span class="v">{{ .Date.Format "02/01/2006" }}</span></div>
+    <div><span class="k">Lectura</span><span class="v">{{ .ReadingTime }} min</span></div>
+    {{ with .Params.area }}<div><span class="k">Área</span><span class="v">{{ . }}</span></div>{{ end }}
+    {{ with .Params.plataforma }}<div><span class="k">Plataforma</span><span class="v">{{ . }}</span></div>{{ end }}
+    {{ with .Params.dificultad }}<div><span class="k">Dificultad</span><span class="v">{{ . }}</span></div>{{ end }}
   </div>
-  {{ with .Params.herramientas }}<div class="tags">{{ range . }}<span class="tag">🛠️ {{ . }}</span>{{ end }}</div>{{ end }}
-  {{ with .Params.tags }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
-  {{ if and (gt (len .TableOfContents) 40) (ne .Params.toc false) }}
-  <details class="toc"><summary>📑 Índice</summary>{{ .TableOfContents }}</details>
+  {{ with .Params.herramientas }}<div class="tags"><span class="mono muted">tools:</span>{{ range . }}<span class="tag tag-cyan">{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ with .Params.mitre }}<div class="tags"><span class="mono muted">att&amp;ck:</span>{{ range . }}<span class="tag tag-purple">{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ with .Params.tags }}<div class="tags"><span class="mono muted">tags:</span>{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ if gt (len .TableOfContents) 40 }}
+  <details class="toc"><summary class="mono">// ÍNDICE</summary>{{ .TableOfContents }}</details>
   {{ end }}
   {{ end }}
 
   <div class="content">{{ .Content }}</div>
 
-  {{ if eq .Type "proyectos" "writeups" }}
-  <p class="back"><a class="btn btn-secondary" href="{{ .CurrentSection.RelPermalink }}">← Volver a {{ .CurrentSection.Title }}</a></p>
+  {{ if $esCaso }}
+  <p class="back"><a class="btn btn-ghost" href="{{ .CurrentSection.RelPermalink }}">← Volver a {{ .CurrentSection.Title }}</a></p>
   {{ end }}
 </article>
 {{ end }}

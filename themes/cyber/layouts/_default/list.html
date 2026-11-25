@@ -1,26 +1,38 @@
 {{ define "main" }}
-<section class="hero hero-left">
-  <h2>📌 {{ .Title }}</h2>
-  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+<section class="page-head">
+  <p class="mono muted">// {{ upper .Title }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
   {{ .Content }}
 </section>
 
 {{ $pages := .RegularPages }}
 {{ if $pages }}
   {{ range $pages.GroupByParam "area" }}
-    {{ with .Key }}<h2 class="group-title">{{ . }}</h2>{{ end }}
-    <div class="stack">
+  <section class="panel">
+    <div class="panel-head">
+      <span class="mono">// {{ with .Key }}{{ upper . }}{{ else }}GENERAL{{ end }}</span>
+      <span class="mono muted">{{ len .Pages }} registros</span>
+    </div>
+    <div class="cards">
       {{ range .Pages }}
-      <article class="item">
-        <h3><a href="{{ .RelPermalink }}">{{ with .Params.icono }}{{ . }} {{ end }}{{ .Title }}</a></h3>
-        <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}</p>
-        {{ with .Params.tags }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
-        <a class="more" href="{{ .RelPermalink }}">🔗 Ver más →</a>
-      </article>
+      <a class="card" href="{{ .RelPermalink }}">
+        <div class="card-top">
+          <span class="mono muted">{{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.dificultad }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
+        {{ with .Params.tags }}<div class="tags">{{ range first 5 . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+        <span class="card-link mono">abrir →</span>
+      </a>
       {{ end }}
     </div>
+  </section>
   {{ end }}
 {{ else }}
-  <div class="empty">🚧 Contenido en preparación. ¡Vuelve pronto!</div>
+  <section class="panel empty">
+    <p class="mono"><span class="dot dot-wip"></span> Sin registros publicados todavía — contenido en preparación.</p>
+  </section>
 {{ end }}
 {{ end }}

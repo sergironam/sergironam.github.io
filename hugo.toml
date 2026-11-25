@@ -7,6 +7,9 @@ enableRobotsTXT = true
 
 [params]
   subtitulo = "Técnico Informático · Máster en Ciberseguridad · SOC / Blue Team"
+  rol = "Analista SOC · Blue Team"
+  experiencia = "7"
+  certificaciones = "2"
   description = "Portfolio técnico de ciberseguridad: análisis de tráfico, honeypots, phishing y OSINT."
   github = "https://github.com/sergironam"
   linkedin = "https://www.linkedin.com/in/TU-PERFIL"
@@ -14,27 +17,27 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
-    name = "🏠 Inicio"
+    name = "Inicio"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "🔒 Proyectos"
+    name = "Proyectos"
     url = "/proyectos/"
     weight = 2
   [[menu.main]]
-    name = "🎯 Writeups"
+    name = "Writeups"
     url = "/writeups/"
     weight = 3
   [[menu.main]]
-    name = "🎓 Certificaciones"
+    name = "Certificaciones"
     url = "/certificaciones/"
     weight = 4
   [[menu.main]]
-    name = "👤 Sobre mí"
+    name = "Sobre mí"
     url = "/sobre-mi/"
     weight = 5
   [[menu.main]]
-    name = "📬 Contacto"
+    name = "Contacto"
     url = "/contacto/"
     weight = 6
 

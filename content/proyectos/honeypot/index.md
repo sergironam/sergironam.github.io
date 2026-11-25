@@ -4,8 +4,7 @@ date: 2026-11-25T14:52:54+01:00
 draft: true
 summary: "Resumen de una o dos líneas del proyecto."
 tags: []
-area: "🛡️ Detección y Threat Intelligence"
-icono: "🍯"
+area: "Detección y Threat Intelligence"
 herramientas: []
 mitre: []
 ---

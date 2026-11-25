@@ -1,0 +1,14 @@
+# Proyectos que aparecen en el panel de la portada.
+# Mientras el proyecto esté en borrador (draft: true) sale como "EN CURSO".
+- titulo: "Análisis de red con Wireshark"
+  ruta: "/proyectos/analisis-de-red-con-wireshark"
+  categoria: "NETWORK"
+- titulo: "Honeypot"
+  ruta: "/proyectos/honeypot"
+  categoria: "THREAT INTEL"
+- titulo: "Análisis de phishing"
+  ruta: "/proyectos/analisis-de-phishing"
+  categoria: "EMAIL SEC"
+- titulo: "Análisis OSINT: huella digital"
+  ruta: "/proyectos/analisis-osint-huella-digital"
+  categoria: "OSINT"
