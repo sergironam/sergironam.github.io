@@ -4,7 +4,8 @@ date: {{ .Date }}
 draft: true
 summary: "Resumen de una o dos líneas del proyecto."
 tags: []
-categories: []
+area: ""
+icono: "📄"
 herramientas: []
 mitre: []
 ---

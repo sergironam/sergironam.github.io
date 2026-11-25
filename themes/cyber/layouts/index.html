@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero">
+  <h2>Bienvenido a mi portfolio técnico</h2>
+  {{ .Content }}
+  <hr>
+  <p class="hero-note">📌 Laboratorios reales · Documentados de principio a fin · En constante evolución</p>
+</section>
+
+<section class="grid">
+  {{ range site.Data.areas }}
+  <article class="card">
+    <h3>{{ .icono }} {{ .titulo }}</h3>
+    <p>{{ .descripcion }}</p>
+    <ul class="project-list">
+      {{ range .proyectos }}
+        {{ with site.GetPage .ruta }}
+          <li><a href="{{ .RelPermalink }}">📄 {{ .Title }}</a></li>
+        {{ else }}
+          <li class="soon">🚧 {{ .titulo }} <span class="badge">Próximamente</span></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </article>
+  {{ end }}
+</section>
+
+<div class="cta">
+  <a class="btn" href="{{ "/proyectos/" | relURL }}">🔒 Ver todos los proyectos →</a>
+  <a class="btn btn-secondary" href="{{ "/sobre-mi/" | relURL }}">📖 Conoce mi trayectoria</a>
+  <a class="btn btn-secondary" href="{{ "/contacto/" | relURL }}">📬 Contacto</a>
+</div>
+{{ end }}

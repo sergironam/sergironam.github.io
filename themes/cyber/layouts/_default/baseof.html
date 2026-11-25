@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Title }} · Portfolio{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="{{ "/" | relURL }}">🛡️ {{ site.Title }}</a></h1>
+    <p class="subtitle">{{ site.Params.subtitulo }}</p>
+  </header>
+
+  <nav class="site-nav">
+    <button class="nav-toggle" aria-label="Menú" onclick="document.querySelector('.site-nav ul').classList.toggle('open')">☰ Menú</button>
+    <ul>
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+        {{ $active := or (eq $current.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
+        <li><a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ now.Year }} {{ site.Title }} · Portfolio técnico | {{ site.Params.subtitulo }}</p>
+    <p class="footer-links">
+      <a href="{{ site.Params.github }}" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>

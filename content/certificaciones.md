@@ -1,7 +1,5 @@
 ---
-title: "Certificaciones y formación"
-ShowToc: false
-ShowReadingTime: false
+title: "🎓 Certificaciones y formación"
 ---
 
 ## Certificaciones

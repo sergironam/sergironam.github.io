@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="post">
+  {{ if eq .Type "proyectos" "writeups" }}
+  <p class="breadcrumb"><a href="{{ "/" | relURL }}">Inicio</a> › <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a></p>
+  {{ end }}
+  <h2 class="post-title">{{ with .Params.icono }}{{ . }} {{ end }}{{ .Title }}</h2>
+
+  {{ if eq .Type "proyectos" "writeups" }}
+  <div class="meta">
+    <span>📅 {{ .Date.Format "02/01/2006" }}</span>
+    <span>⏱️ {{ .ReadingTime }} min</span>
+    {{ with .Params.plataforma }}<span>🎯 {{ . }}</span>{{ end }}
+    {{ with .Params.dificultad }}<span>📊 {{ . }}</span>{{ end }}
+  </div>
+  {{ with .Params.herramientas }}<div class="tags">{{ range . }}<span class="tag">🛠️ {{ . }}</span>{{ end }}</div>{{ end }}
+  {{ with .Params.tags }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ if and (gt (len .TableOfContents) 40) (ne .Params.toc false) }}
+  <details class="toc"><summary>📑 Índice</summary>{{ .TableOfContents }}</details>
+  {{ end }}
+  {{ end }}
+
+  <div class="content">{{ .Content }}</div>
+
+  {{ if eq .Type "proyectos" "writeups" }}
+  <p class="back"><a class="btn btn-secondary" href="{{ .CurrentSection.RelPermalink }}">← Volver a {{ .CurrentSection.Title }}</a></p>
+  {{ end }}
+</article>
+{{ end }}

@@ -4,7 +4,8 @@ date: 2026-11-25T14:52:55+01:00
 draft: true
 summary: "Resumen de una o dos líneas del proyecto."
 tags: []
-categories: []
+area: "🕵️ OSINT"
+icono: "🕵️"
 herramientas: []
 mitre: []
 ---

@@ -1,72 +1,49 @@
 baseURL = "https://sergironam.github.io/"
 languageCode = "es-es"
 defaultContentLanguage = "es"
-title = "Sergio | Ciberseguridad"
-theme = "PaperMod"
+title = "Sergio Girona"
+theme = "cyber"
 enableRobotsTXT = true
 
-[pagination]
-  pagerSize = 10
-
 [params]
-  env = "production"
-  description = "Portfolio de ciberseguridad: análisis de red, honeypots, phishing y OSINT."
-  author = "Sergio"
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowToc = true
-  TocOpen = false
-  ShowCodeCopyButtons = true
-  ShowBreadCrumbs = true
-  ShowPostNavLinks = true
-  ShowShareButtons = false
-  dateFormat = "02/01/2006"
-
-  [params.homeInfoParams]
-    Title = "Hola, soy Sergio 👋"
-    Content = """
-Técnico informático con 7 años de experiencia y especializado en ciberseguridad (Máster CETI, Cisco CyberOps Associate y Cisco Ethical Hacker).
-Busco mi primer puesto en un **SOC / Blue Team**. Aquí documento mis laboratorios y proyectos prácticos.
-"""
-
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/sergironam"
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/TU-PERFIL"
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:TU-EMAIL"
+  subtitulo = "Técnico Informático · Máster en Ciberseguridad · SOC / Blue Team"
+  description = "Portfolio técnico de ciberseguridad: análisis de tráfico, honeypots, phishing y OSINT."
+  github = "https://github.com/sergironam"
+  linkedin = "https://www.linkedin.com/in/TU-PERFIL"
+  email = "TU-EMAIL"
 
 [menu]
   [[menu.main]]
-    name = "Proyectos"
-    url = "/proyectos/"
+    name = "🏠 Inicio"
+    url = "/"
     weight = 1
   [[menu.main]]
-    name = "Writeups"
-    url = "/writeups/"
+    name = "🔒 Proyectos"
+    url = "/proyectos/"
     weight = 2
   [[menu.main]]
-    name = "Certificaciones"
-    url = "/certificaciones/"
+    name = "🎯 Writeups"
+    url = "/writeups/"
     weight = 3
   [[menu.main]]
-    name = "Sobre mí"
-    url = "/sobre-mi/"
+    name = "🎓 Certificaciones"
+    url = "/certificaciones/"
     weight = 4
   [[menu.main]]
-    name = "Buscar"
-    url = "/buscar/"
+    name = "👤 Sobre mí"
+    url = "/sobre-mi/"
     weight = 5
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+  [[menu.main]]
+    name = "📬 Contacto"
+    url = "/contacto/"
+    weight = 6
 
 [markup.goldmark.renderer]
   unsafe = true
 
 [markup.highlight]
-  style = "monokai"
-  noClasses = false
+  style = "dracula"
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3

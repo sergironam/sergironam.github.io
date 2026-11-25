@@ -1,7 +1,5 @@
 ---
-title: "Sobre mí"
-ShowToc: false
-ShowReadingTime: false
+title: "👤 Sobre mí"
 ---
 
 Soy Sergio, técnico informático con **7 años de experiencia** en soporte, redes, copias de seguridad y administración de Windows Server (DHCP, etc.), y con experiencia previa como desarrollador web.

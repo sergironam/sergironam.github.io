@@ -1,0 +1,25 @@
+# Tarjetas de la portada. Cada área agrupa proyectos.
+# "ruta" es la carpeta del proyecto dentro de content/. Mientras el proyecto
+# esté en borrador (draft: true) aparecerá como "Próximamente".
+- icono: "📡"
+  titulo: "Análisis de tráfico y redes"
+  descripcion: "Captura y análisis de tráfico, detección de anomalías y protocolos sospechosos."
+  proyectos:
+    - titulo: "Análisis de red con Wireshark"
+      ruta: "/proyectos/analisis-de-red-con-wireshark"
+
+- icono: "🛡️"
+  titulo: "Detección y Threat Intelligence"
+  descripcion: "Honeypots, análisis de amenazas reales, IOCs y mapeo a MITRE ATT&CK."
+  proyectos:
+    - titulo: "Honeypot"
+      ruta: "/proyectos/honeypot"
+    - titulo: "Análisis de phishing"
+      ruta: "/proyectos/analisis-de-phishing"
+
+- icono: "🕵️"
+  titulo: "OSINT"
+  descripcion: "Evaluación de huella y exposición digital con fuentes abiertas."
+  proyectos:
+    - titulo: "Análisis OSINT: huella digital"
+      ruta: "/proyectos/analisis-osint-huella-digital"
