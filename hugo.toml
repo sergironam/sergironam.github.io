@@ -8,7 +8,7 @@ enableRobotsTXT = true
 [params]
   subtitulo = "Técnico Informático · Máster en Ciberseguridad · SOC / Blue Team"
   rol = "Analista SOC · Blue Team"
-  experiencia = "7"
+  experiencia = "6+"
   certificaciones = "2"
   description = "Portfolio técnico de ciberseguridad: análisis de tráfico, honeypots, phishing y OSINT."
   github = "https://github.com/sergironam"

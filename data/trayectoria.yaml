@@ -1,0 +1,37 @@
+# Línea de tiempo de "Sobre mí" (de más reciente a más antiguo).
+# tipo: actual | certificacion | formacion | experiencia
+
+
+#- fecha: "Ahora"
+  #tipo: "actual"
+  #titulo: "Formación continua y proyectos"
+  #lugar: "TryHackMe · Portfolio"
+  #detalle: "Ruta SOC Level 1 y laboratorios propios: análisis de tráfico, honeypots, phishing, OSINT y automatización SOAR." 
+
+
+- fecha: "Jul 2026"
+  tipo: "certificacion"
+  titulo: "Cisco CyberOps Associate · Cisco Ethical Hacker"
+  lugar: "Cisco Networking Academy"
+  detalle: "Operaciones de seguridad, detección y respuesta a incidentes · Hacking ético y pruebas de penetración."
+
+
+- fecha: "Oct 2025 — Jun 2026"
+  tipo: "formacion"
+  titulo: "Máster en Ciberseguridad (CETI)"
+  lugar: "IES Enric Valor"
+  detalle: "Ciberseguridad en Entornos de las Tecnologías de la Información."
+
+
+- fecha: "Nov 2018 — Abr 2025"
+  tipo: "experiencia"
+  titulo: "Técnico Informático"
+  lugar: "Mediasoft Informática S.L."
+  detalle: "Soporte técnico a usuarios y clientes, configuración de redes, administración de Windows Server (DHCP) y gestión de copias de seguridad."
+
+
+- fecha: "Sep 2015 — Jun 2017"
+  tipo: "formacion"
+  titulo: "Técnico Superior en DAM"
+  lugar: "Desarrollo de Aplicaciones Multiplataforma"
+  detalle: "Programación, bases de datos y sistemas informáticos."

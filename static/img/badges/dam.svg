@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2a44"/>
+      <stop offset="1" stop-color="#1b1440"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.35" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="hex">
+      <polygon points="200,18 358,109 358,291 200,382 42,291 42,109"/>
+    </clipPath>
+  </defs>
+
+  <!-- Hexágono -->
+  <polygon points="200,18 358,109 358,291 200,382 42,291 42,109" fill="url(#bg)"/>
+  <g clip-path="url(#hex)">
+    <rect width="400" height="400" fill="url(#glow)"/>
+    <!-- Retícula sutil -->
+    <g stroke="#a78bfa" stroke-opacity="0.07" stroke-width="1">
+      <path d="M0 80H400M0 120H400M0 160H400M0 200H400M0 240H400M0 280H400M0 320H400"/>
+      <path d="M80 0V400M120 0V400M160 0V400M200 0V400M240 0V400M280 0V400M320 0V400"/>
+    </g>
+  </g>
+  <polygon points="200,18 358,109 358,291 200,382 42,291 42,109" fill="none" stroke="url(#edge)" stroke-width="10" stroke-linejoin="round"/>
+  <polygon points="200,38 341,119 341,281 200,362 59,281 59,119" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Ventana de código -->
+  <g transform="translate(200 128)">
+    <rect x="-52" y="-42" width="104" height="84" rx="10" fill="#0a1424" stroke="#a78bfa" stroke-width="4"/>
+    <path d="M-52 -24 H52" stroke="#a78bfa" stroke-width="3"/>
+    <circle cx="-40" cy="-33" r="3.5" fill="#a78bfa"/><circle cx="-29" cy="-33" r="3.5" fill="#a78bfa" opacity=".6"/><circle cx="-18" cy="-33" r="3.5" fill="#a78bfa" opacity=".35"/>
+    <path d="M-16 -6 L-30 8 L-16 22" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 -6 L30 8 L16 22" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 -10 L-6 26" stroke="#a78bfa" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Textos -->
+  <text x="200" y="222" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="800" font-size="28" letter-spacing="4" fill="#ffffff">TÉC. SUPERIOR</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="3" fill="#b6c2d6">DESARROLLO APPS</text>
+
+  <!-- Banda -->
+  <path d="M62 272 H338 L326 292 L338 312 H62 L74 292 Z" fill="url(#band)"/>
+  <text x="200" y="299" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="8" fill="#06121c">DAM</text>
+
+  <text x="200" y="338" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2" fill="#6b7d99">MULTIPLATAFORMA</text>
+</svg>

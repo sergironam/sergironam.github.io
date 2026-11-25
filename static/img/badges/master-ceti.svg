@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2a44"/>
+      <stop offset="1" stop-color="#1b1440"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.35" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="hex">
+      <polygon points="200,18 358,109 358,291 200,382 42,291 42,109"/>
+    </clipPath>
+  </defs>
+
+  <!-- Hexágono -->
+  <polygon points="200,18 358,109 358,291 200,382 42,291 42,109" fill="url(#bg)"/>
+  <g clip-path="url(#hex)">
+    <rect width="400" height="400" fill="url(#glow)"/>
+    <!-- Retícula sutil -->
+    <g stroke="#22d3ee" stroke-opacity="0.07" stroke-width="1">
+      <path d="M0 80H400M0 120H400M0 160H400M0 200H400M0 240H400M0 280H400M0 320H400"/>
+      <path d="M80 0V400M120 0V400M160 0V400M200 0V400M240 0V400M280 0V400M320 0V400"/>
+    </g>
+  </g>
+  <polygon points="200,18 358,109 358,291 200,382 42,291 42,109" fill="none" stroke="url(#edge)" stroke-width="10" stroke-linejoin="round"/>
+  <polygon points="200,38 341,119 341,281 200,362 59,281 59,119" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Escudo con candado -->
+  <g transform="translate(200 128)">
+    <path d="M0 -50 L42 -34 V2 C42 30 22 48 0 58 C-22 48 -42 30 -42 2 V-34 Z" fill="#0a1424" stroke="#22d3ee" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="-15" y="-6" width="30" height="24" rx="4" fill="#22d3ee"/>
+    <path d="M-9 -6 V-15 a9 9 0 0 1 18 0 V-6" fill="none" stroke="#22d3ee" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="0" cy="5" r="3.6" fill="#0a1424"/>
+    <rect x="-1.6" y="5" width="3.2" height="7" rx="1.2" fill="#0a1424"/>
+  </g>
+
+  <!-- Textos -->
+  <text x="200" y="222" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="800" font-size="40" letter-spacing="6" fill="#ffffff">MÁSTER</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="3" fill="#b6c2d6">CIBERSEGURIDAD</text>
+
+  <!-- Banda -->
+  <path d="M62 272 H338 L326 292 L338 312 H62 L74 292 Z" fill="url(#band)"/>
+  <text x="200" y="299" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="8" fill="#06121c">CETI</text>
+
+  <text x="200" y="338" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2" fill="#6b7d99">IES ENRIC VALOR</text>
+</svg>

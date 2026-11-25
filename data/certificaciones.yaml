@@ -1,0 +1,74 @@
+- titulo: "CyberOps Associate"
+  emisor: "Cisco Networking Academy"
+  fecha: "02/07/2026"
+  insignia: "img/badges/cyberops-associate.png"
+  credly: "https://www.credly.com/earner/earned/badge/38598947-bc8d-46a0-970b-1564520a3d81"
+  descripcion: >-
+    Credencial que acredita una comprensión amplia de las operaciones de seguridad:
+    detección y análisis de intrusiones, monitorización de redes y respuesta a
+    incidentes en el contexto de un SOC.
+  competencias:
+    - Desplegar máquinas virtuales para crear un entorno seguro donde implementar y analizar amenazas.
+    - Explicar el rol del analista de operaciones de ciberseguridad (SOC) en la empresa.
+    - Conocer las características de Windows necesarias para realizar análisis de seguridad.
+    - Conocer las características y el funcionamiento del sistema operativo Linux.
+    - Analizar el funcionamiento de los protocolos y servicios de red.
+    - Explicar el funcionamiento de la infraestructura de red.
+    - Clasificar los distintos tipos de ataques de red.
+    - Usar herramientas de monitorización para identificar ataques contra protocolos y servicios.
+    - Prevenir el acceso malicioso a redes, equipos y datos.
+    - Explicar el impacto de la criptografía en la monitorización de la seguridad de red.
+    - Investigar vulnerabilidades y ataques en endpoints.
+    - Evaluar alertas de seguridad de red.
+    - Analizar datos de intrusión para identificar equipos comprometidos y vulnerabilidades.
+    - Aplicar modelos de respuesta a incidentes para gestionar incidentes de seguridad.
+  skills:
+    - Attack Methods
+    - Computer Forensics
+    - Cryptography
+    - Cybersecurity
+    - Data And Event Analysis
+    - Endpoint Threat Analysis
+    - Host-based Analysis
+    - Incident Response
+    - Malware Analysis
+    - Network Attacks
+    - Network Intrusion Analysis SecOps
+    - SOC Metrics
+    - Security Concepts
+    - Security Monitoring
+    - Security Policy
+    - Security Procedures
+    - Threat Detection
+
+- titulo: "Ethical Hacker"
+  emisor: "Cisco Networking Academy"
+  fecha: "02/07/2026"
+  insignia: "img/badges/ethical-hacker.png"
+  credly: "https://www.credly.com/earner/earned/badge/f476cad8-588a-423b-af42-7034ff1a4d3d"
+  descripcion: >-
+    Formación en hacking ético y pruebas de penetración siguiendo una metodología:
+    planificación y alcance, reconocimiento, análisis de vulnerabilidades,
+    explotación, post-explotación y elaboración del informe.
+  competencias:
+    - Explicar la importancia de una metodología en el hacking ético y las pruebas de penetración.
+    - Elaborar la documentación previa de un pentest (alcance, reglas de enfrentamiento).
+    - Realizar recopilación de información y escaneo de vulnerabilidades.
+    - Explicar por qué tienen éxito los ataques de ingeniería social.
+    - Explotar vulnerabilidades en redes cableadas e inalámbricas.
+    - Explotar vulnerabilidades en aplicaciones.
+    - Explotar vulnerabilidades en entornos cloud, móviles e IoT.
+    - Realizar actividades de post-explotación.
+    - Redactar un informe de pruebas de penetración.
+    - Clasificar las herramientas de pentesting según su caso de uso.
+  skills:
+    - Penetration Testing
+    - Information Gathering
+    - Vulnerability Scanning
+    - Social Engineering
+    - Network Exploitation
+    - Wireless Security
+    - Application Security
+    - Cloud, Mobile & IoT Security
+    - Post-Exploitation
+    - Pentest Reporting

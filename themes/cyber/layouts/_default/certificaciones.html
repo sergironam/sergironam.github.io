@@ -1,0 +1,85 @@
+{{ define "main" }}
+<section class="page-head">
+  <p class="mono muted">// {{ upper .Title }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <span class="mono">// CREDENCIALES VERIFICADAS</span>
+    <span class="mono muted">{{ len site.Data.certificaciones }} insignias</span>
+  </div>
+
+  {{ range site.Data.certificaciones }}
+  <article class="cert">
+    <div class="cert-badge">
+      {{ if fileExists (printf "static/%s" .insignia) }}
+        <img src="{{ .insignia | relURL }}" alt="Insignia {{ .titulo }}" loading="lazy">
+      {{ else }}
+        <div class="badge-ph"><span>◇</span><small class="mono">{{ upper .emisor }}</small></div>
+      {{ end }}
+      <span class="pill pill-ok"><span class="dot dot-ok"></span> VERIFIED</span>
+    </div>
+
+    <div class="cert-body">
+      <h2>{{ .titulo }}</h2>
+      <p class="cert-issuer">Emitida por <strong>{{ .emisor }}</strong>{{ with .fecha }} · {{ . }}{{ end }}</p>
+      <p class="cert-desc">{{ .descripcion }}</p>
+
+      {{ with .competencias }}
+      <details class="competencias">
+        <summary class="mono">// QUÉ ACREDITA ({{ len . }})</summary>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
+
+      <p class="skills-title mono">// SKILLS</p>
+      <div class="chips">
+        {{ range .skills }}<span class="chip">{{ . }}</span>{{ end }}
+      </div>
+
+      {{ with .credly }}{{ if ne . "#" }}
+      <a class="btn btn-ghost" href="{{ . }}" target="_blank" rel="noopener">✓ Verificar en Credly</a>
+      {{ end }}{{ end }}
+    </div>
+  </article>
+  {{ end }}
+</section>
+
+
+<section class="panel">
+  <div class="panel-head">
+    <span class="mono">// FORMACIÓN ACADÉMICA</span>
+    <span class="mono muted">{{ len site.Data.formacion }} titulaciones</span>
+  </div>
+  {{ range site.Data.formacion }}
+  <article class="cert">
+    <div class="cert-badge">
+      {{ if fileExists (printf "static/%s" .insignia) }}
+        <img src="{{ .insignia | relURL }}" alt="Insignia {{ .etiqueta }}" loading="lazy">
+      {{ else }}
+        <div class="badge-ph badge-edu"><span>🎓</span><small class="mono">{{ .etiqueta }}</small></div>
+      {{ end }}
+      <span class="pill pill-edu mono">{{ .etiqueta }}</span>
+    </div>
+    <div class="cert-body">
+      <h2>{{ .titulo }}</h2>
+      <p class="cert-issuer">{{ with .centro }}<strong>{{ . }}</strong> · {{ end }}{{ .fecha }}</p>
+      <p class="cert-desc">{{ .descripcion }}</p>
+    </div>
+  </article>
+  {{ end }}
+</section>
+
+<!-- <section class="panel">
+  <div class="panel-head">
+    <span class="mono">// EN CURSO</span>
+    <span class="pill pill-wip"><span class="dot dot-wip"></span> IN PROGRESS</span>
+  </div>
+  <div class="cert-body" style="padding: 1.2rem 1.6rem;">
+    <p class="cert-desc">Rutas de TryHackMe (SOC Level 1…)</p>
+  </div>
+</section> -->
+
+{{ end }}

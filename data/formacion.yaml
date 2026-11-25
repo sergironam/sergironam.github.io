@@ -1,0 +1,14 @@
+# Formación académica (de más reciente a más antigua).
+- titulo: "Máster en Ciberseguridad en Entornos de las Tecnologías de la Información (CETI)"
+  centro: "IES Enric Valor · Pego (Alicante)"
+  fecha: "Oct 2025 — Jun 2026"
+  insignia: "img/badges/master-ceti.svg"
+  etiqueta: "MÁSTER"
+  descripcion: "Formación especializada en seguridad de sistemas y redes, análisis forense, hacking ético, normativa y respuesta ante incidentes."
+
+- titulo: "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)"
+  centro: "IES Jaume II El Just Tavernes (Valencia)"         
+  fecha: "Sep 2015 — Jun 2017"
+  insignia: "img/badges/dam.svg"
+  etiqueta: "CFGS"
+  descripcion: "Ciclo Formativo de Grado Superior: programación, bases de datos, sistemas informáticos, desarrollo de interfaces y aplicaciones para escritorio y dispositivos móviles."

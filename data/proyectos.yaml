@@ -12,3 +12,6 @@
 - titulo: "Análisis OSINT: huella digital"
   ruta: "/proyectos/analisis-osint-huella-digital"
   categoria: "OSINT"
+- titulo: "Automatización SOAR: Wazuh + n8n"
+  ruta: "/proyectos/automatizacion-soar-wazuh-n8n"
+  categoria: "SOAR"

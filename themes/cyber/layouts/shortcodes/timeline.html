@@ -1,0 +1,15 @@
+{{- $etiquetas := dict "actual" "EN CURSO" "certificacion" "CERTIFICACIÓN" "formacion" "FORMACIÓN" "experiencia" "EXPERIENCIA" -}}
+<ol class="timeline">
+  {{- range site.Data.trayectoria }}
+  <li class="tl-item tl-{{ .tipo }}">
+    <span class="tl-dot"></span>
+    <div class="tl-head">
+      <span class="tl-date mono">{{ .fecha }}</span>
+      <span class="tl-type mono">{{ index $etiquetas .tipo }}</span>
+    </div>
+    <h3 class="tl-title">{{ .titulo }}</h3>
+    {{ with .lugar }}<p class="tl-place">{{ . }}</p>{{ end }}
+    {{ with .detalle }}<p class="tl-detail">{{ . }}</p>{{ end }}
+  </li>
+  {{- end }}
+</ol>

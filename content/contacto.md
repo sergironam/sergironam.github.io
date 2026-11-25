@@ -1,10 +1,11 @@
 ---
 title: "Contacto"
 ---
-¿Tienes una oferta, una propuesta o quieres comentar algún proyecto? Escríbeme:
 
-- **Email:** [TU-EMAIL](mailto:TU-EMAIL)
-- **LinkedIn:** [linkedin.com/in/TU-PERFIL](https://www.linkedin.com/in/TU-PERFIL)
+Contáctame:
+
+- **Email:** [sergironam@gmail.com](mailto:sergironam@gmail.com)
+- **LinkedIn:** https://www.linkedin.com/in/sergio-gir/
 - **GitHub:** [github.com/sergironam](https://github.com/sergironam)
 
-📄 [Descargar CV (PDF)](/cv.pdf)
+📄 **CV disponible bajo petición**: Escríbeme por email o LinkedIn y te envío el CV.
